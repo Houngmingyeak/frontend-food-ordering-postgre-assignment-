@@ -1,0 +1,109 @@
+.shell { min-height: 100vh; display: flex; flex-direction: column; }
+
+.nav {
+  background: var(--red);
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 16px rgba(192,34,42,0.3);
+}
+
+.logo { display: flex; align-items: center; gap: 10px; }
+.logoMark {
+  width: 36px; height: 36px;
+  background: var(--yellow);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 20px; color: var(--red-dark);
+}
+.logoText { color: #fff; font-weight: 800; font-size: 20px; letter-spacing: -0.5px; }
+.logoText em { color: var(--yellow); font-style: normal; }
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.navLink {
+  color: rgba(255,255,255,0.8);
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.15s;
+}
+.navLink:hover, .navLink.active {
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+}
+.navLink.active { font-weight: 700; }
+
+.logoutBtn {
+  background: transparent;
+  border: 1.5px solid rgba(255,255,255,0.4);
+  color: rgba(255,255,255,0.85);
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.15s;
+  margin-left: 8px;
+}
+.logoutBtn:hover { background: rgba(255,255,255,0.15); color: #fff; }
+
+.navRight { display: flex; align-items: center; gap: 12px; }
+.userName { color: rgba(255,255,255,0.75); font-size: 13px; }
+
+.cartBtn {
+  background: var(--yellow);
+  border: none;
+  border-radius: 10px;
+  width: 42px; height: 42px;
+  font-size: 18px;
+  position: relative;
+  transition: transform 0.15s, background 0.15s;
+}
+.cartBtn:hover { background: #ffc820; transform: scale(1.05); }
+
+.cartBadge {
+  position: absolute;
+  top: -6px; right: -6px;
+  background: var(--red-dark);
+  color: #fff;
+  border-radius: 50%;
+  width: 20px; height: 20px;
+  font-size: 11px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+  border: 2px solid var(--red);
+}
+
+.hamburger {
+  display: none;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 22px;
+}
+
+.main { flex: 1; }
+
+@media (max-width: 768px) {
+  .navLinks {
+    display: none;
+    position: absolute;
+    top: 64px; left: 0; right: 0;
+    background: var(--red-dark);
+    flex-direction: column;
+    padding: 16px;
+    gap: 8px;
+  }
+  .navLinks.open { display: flex; }
+  .navLink { width: 100%; }
+  .hamburger { display: block; }
+  .userName { display: none; }
+}

@@ -1,0 +1,83 @@
+.page {
+  min-height: 100vh;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background-image: radial-gradient(circle at 20% 20%, rgba(192,34,42,0.06) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 80%, rgba(245,184,0,0.08) 0%, transparent 50%);
+}
+
+.card {
+  background: var(--surface);
+  border-radius: 20px;
+  padding: 40px 36px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.1);
+  border: 1px solid var(--border);
+}
+
+.logoWrap {
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 28px; justify-content: center;
+}
+.logoMark {
+  width: 42px; height: 42px;
+  background: var(--red);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 22px; color: var(--yellow);
+}
+.logoText { font-weight: 800; font-size: 24px; color: var(--text); }
+.logoText em { color: var(--red); font-style: normal; }
+
+.title { font-size: 22px; font-weight: 800; text-align: center; margin-bottom: 6px; }
+.sub { font-size: 14px; color: var(--muted); text-align: center; margin-bottom: 24px; }
+
+.errorBanner {
+  background: var(--red-light);
+  border: 1px solid #f5c0c2;
+  color: var(--red);
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+
+.form { display: flex; flex-direction: column; gap: 16px; }
+
+.field { display: flex; flex-direction: column; gap: 5px; }
+.field label { font-size: 13px; font-weight: 600; }
+.field input {
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  padding: 11px 14px;
+  font-size: 14px;
+  font-family: inherit;
+  transition: border-color 0.15s;
+  background: var(--bg);
+  color: var(--text);
+}
+.field input:focus { outline: none; border-color: var(--red); background: var(--surface); }
+.field input::placeholder { color: var(--muted); }
+
+.submitBtn {
+  background: var(--red);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 13px;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: inherit;
+  transition: background 0.15s;
+  margin-top: 4px;
+}
+.submitBtn:not(:disabled):hover { background: var(--red-dark); }
+.submitBtn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.switchLink { text-align: center; font-size: 13px; color: var(--muted); margin-top: 20px; }
+.switchLink a { color: var(--red); font-weight: 700; }
+.switchLink a:hover { text-decoration: underline; }
